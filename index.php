@@ -1,6 +1,6 @@
 <?php
-    $kv_username = "" .$_ENV['usernamepostgre']."@pg-srv-nathan-lepron";
-    $kv_password = $_ENV['passwordpostgre'];
+    $kv_username = "" .getenv('usernamepostgre')."@pg-srv-nathan-lepron";
+    $kv_password = getenv('passwordpostgre');
    class Database {
        private $host = "pg-srv-nathan-lepron.postgres.database.azure.com";
        private $db_name = "pg-db-nathan-lepron";
