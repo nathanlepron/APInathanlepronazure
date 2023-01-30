@@ -26,10 +26,10 @@
         return $stmt;
     }
    }
-   //$database = new Database();
-   //$conn = $database->getConnection();
-   //$stmt = $database->readAllCategories();
-   //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   $database = new Database();
+   $conn = $database->getConnection();
+   $stmt = $database->readAllCategories();
+   $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 echo $kv_password;
 echo $kv_username;
 //header("Access-Control-Allow-Origin: *");
