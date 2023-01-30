@@ -1,16 +1,16 @@
 <?php
+    $kv_username = "" .$_ENV['usernamepostgre']."@pg-srv-nathan-lepron";
+    $kv_password = $_ENV['passwordpostgre'];
    class Database {
        private $host = "pg-srv-nathan-lepron.postgres.database.azure.com";
        private $db_name = "pg-db-nathan-lepron";
-       private $username = "" . $_ENV['usernamepostgre'] . "@pg-srv-nathan-lepron";
-       private $password = "".$_ENV['passwordpostgre']."";
        public $conn;
 
        public function getConnection() {
            $this->conn = null;
 
            try {
-               $this->conn = new PDO("pgsql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+               $this->conn = new PDO("pgsql:host=" . $this->host . ";dbname=" . $this->db_name, $kv_username, $kv_password);
            } catch(PDOException $exception) {
                echo "Connection error: " . $exception->getMessage();
            }
