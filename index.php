@@ -30,7 +30,9 @@
    $conn = $database->getConnection();
    $stmt = $database->readAllCategories();
    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+   
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
 header('Content-Type: application/json');
 echo json_encode($rows);
 ?>
