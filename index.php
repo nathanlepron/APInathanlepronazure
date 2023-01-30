@@ -2,8 +2,8 @@
    class Database {
        private $host = "pg-srv-nathan-lepron.postgres.database.azure.com";
        private $db_name = "pg-db-nathan-lepron";
-       private $username = "postgree_user@pg-srv-nathan-lepron";//"" . $_ENV['usernamepostgre'] . "@pg-srv-nathan-lepron";
-       private $password = "Password####PG";//"".$_ENV['passwordpostgre']."";
+       private $username = "" . $_ENV['usernamepostgre'] . "@pg-srv-nathan-lepron";
+       private $password = "".$_ENV['passwordpostgre']."";
        public $conn;
 
        public function getConnection() {
@@ -30,7 +30,7 @@
    $conn = $database->getConnection();
    $stmt = $database->readAllCategories();
    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-   
+
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 header('Content-Type: application/json');
