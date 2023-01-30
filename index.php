@@ -12,7 +12,7 @@
            try {
                $this->conn = new PDO("pgsql:host=" . $this->host . ";dbname=" . $this->db_name, $kv_username, $kv_password);
            } catch(PDOException $exception) {
-               echo "Connection error: " . $exception->getMessage();
+               echo "Connection error: " . $exception->getMessage() . "/" . $kv_password . "/" . $kv_username;
            }
 
            return $this->conn;
@@ -26,10 +26,10 @@
         return $stmt;
     }
    }
-   $database = new Database();
-   $conn = $database->getConnection();
-   $stmt = $database->readAllCategories();
-   $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   //$database = new Database();
+   //$conn = $database->getConnection();
+   //$stmt = $database->readAllCategories();
+   //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 echo $kv_password;
 echo $kv_username;
 //header("Access-Control-Allow-Origin: *");
