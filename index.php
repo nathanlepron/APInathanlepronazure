@@ -30,10 +30,8 @@
    $conn = $database->getConnection($kv_username,$kv_password);
    $stmt = $database->readAllCategories();
    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-echo $kv_password;
-echo $kv_username;
-//header("Access-Control-Allow-Origin: *");
-//header("Access-Control-Allow-Headers: *");
-//header('Content-Type: application/json');
-//echo json_encode($rows);
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
+header('Content-Type: application/json');
+echo json_encode($rows);
 ?>
