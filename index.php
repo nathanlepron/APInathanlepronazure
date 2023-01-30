@@ -6,13 +6,13 @@
        private $db_name = "pg-db-nathan-lepron";
        public $conn;
 
-       public function getConnection() {
+       public function getConnection($username,$password) {
            $this->conn = null;
 
            try {
-               $this->conn = new PDO("pgsql:host=" . $this->host . ";dbname=" . $this->db_name, $kv_username, $kv_password);
+               $this->conn = new PDO("pgsql:host=" . $this->host . ";dbname=" . $this->db_name, $username, $password);
            } catch(PDOException $exception) {
-               echo "Connection error: " . $exception->getMessage() . "/" . $kv_password . "/" . $kv_username;
+               echo "Connection error: " . $exception->getMessage() . "/" . $password . "/" . $username;
            }
 
            return $this->conn;
@@ -27,7 +27,7 @@
     }
    }
    $database = new Database();
-   $conn = $database->getConnection();
+   $conn = $database->getConnection($kv_username,$kv_password);
    $stmt = $database->readAllCategories();
    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 echo $kv_password;
